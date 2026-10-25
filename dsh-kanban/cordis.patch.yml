@@ -1,0 +1,38 @@
+# dsh-kanban bundle patch
+
+- insert:
+    - id: kanban
+      name: 'dsh-kanban'
+      config:
+        enabled: true
+        maxTasks: 1000
+        columns:
+          - id: planned
+            title: '待规划'
+            color: '#9ca3af'
+          - id: todo
+            title: '待办'
+            color: '#60a5fa'
+          - id: in-progress
+            title: '进行中'
+            color: '#a78bfa'
+          - id: review
+            title: '评审中'
+            color: '#fbbf24'
+          - id: done
+            title: '已完成'
+            color: '#34d399'
+        feishu:
+          appId: 'your-app-id'
+          appSecret: 'your-app-secret'
+          appToken: 'your-bitable-app-token'
+          tableId: 'your-table-id'
+          fieldMapping:
+            title: '标题'
+            description: '描述'
+            status: '状态'
+            priority: '优先级'
+            tags: '标签'
+            assignee: '负责人'
+            dueDate: '截止日期'
+            project: '项目'

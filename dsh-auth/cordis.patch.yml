@@ -1,0 +1,20 @@
+# dsh-auth bundle patch: inserts the authentication plugin row into the profile.
+#
+# Install: dsh plugin --profile web add link:<path-to-this-plugin>
+#
+# This patch inserts a single row that loads the dsh-auth plugin in
+# the host process (auth routes, middleware) and the browser half
+# (login page, user management).
+
+- insert:
+    - id: auth
+      name: 'dsh-auth'
+      config:
+        enabled: true
+        enableSetup: true
+        publicPaths:
+          - '/api/dsh-auth/login'
+          - '/api/dsh-auth/setup'
+          - '/api/dsh-auth/status'
+          - '/favicon.ico'
+          - '/assets/*'

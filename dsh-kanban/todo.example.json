@@ -1,0 +1,59 @@
+[
+  {
+    "id": "task_1",
+    "title": "设计新功能架构",
+    "description": "规划下个版本的功能架构设计",
+    "status": "planned",
+    "priority": "medium",
+    "tags": ["设计", "架构"],
+    "createdAt": "2026-08-22T10:00:00Z",
+    "updatedAt": "2026-08-22T10:00:00Z",
+    "dueDate": "2026-09-15",
+    "order": 0
+  },
+  {
+    "id": "task_2",
+    "title": "完成项目文档",
+    "description": "编写 README 和 API 文档",
+    "status": "todo",
+    "priority": "high",
+    "tags": ["文档", "项目"],
+    "createdAt": "2026-08-22T10:00:00Z",
+    "updatedAt": "2026-08-22T10:00:00Z",
+    "dueDate": "2026-09-01",
+    "order": 0
+  },
+  {
+    "id": "task_3",
+    "title": "实现用户认证",
+    "description": "添加 JWT 认证和会话管理",
+    "status": "in-progress",
+    "priority": "urgent",
+    "tags": ["安全", "后端"],
+    "createdAt": "2026-08-21T09:00:00Z",
+    "updatedAt": "2026-08-22T11:00:00Z",
+    "dueDate": "2026-08-25",
+    "order": 0
+  },
+  {
+    "id": "task_4",
+    "title": "修复登录页面样式",
+    "status": "done",
+    "priority": "medium",
+    "tags": ["UI", "bug"],
+    "createdAt": "2026-08-20T14:00:00Z",
+    "updatedAt": "2026-08-21T16:00:00Z",
+    "order": 0
+  },
+  {
+    "id": "task_5",
+    "title": "第三方支付集成",
+    "description": "支付接口对接失败，需要重新评估方案",
+    "status": "failed",
+    "priority": "high",
+    "tags": ["支付", "第三方"],
+    "createdAt": "2026-08-19T10:00:00Z",
+    "updatedAt": "2026-08-22T09:00:00Z",
+    "order": 0
+  }
+]

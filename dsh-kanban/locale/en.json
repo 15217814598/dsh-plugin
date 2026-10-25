@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Task Kanban",
+    "description": "Task management board with drag-and-drop, status tracking, SQLite persistence, Feishu sync, and an auto-task scheduler."
+  }
+}
