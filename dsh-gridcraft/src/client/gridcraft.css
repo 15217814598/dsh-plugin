@@ -1,0 +1,331 @@
+/* dsh-gridcraft panel — aligned with host theme via --dsw-alias-* variables. */
+
+.dsh-gc-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: var(--dsw-alias-surface-default, transparent);
+  color: var(--dsw-alias-text-primary, inherit);
+}
+
+.dsh-gc-toolbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--dsw-alias-border-subtle, rgba(127, 127, 127, 0.25));
+  background: var(--dsw-alias-surface-raised, transparent);
+}
+
+.dsh-gc-tab-title-icon {
+  flex: none;
+  margin-right: 4px;
+}
+
+.dsh-gc-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.dsh-gc-field-label {
+  font-size: 12px;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+.dsh-gc-select {
+  max-width: min(220px, 100%);
+  flex: 0 1 auto;
+  font: inherit;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: var(--dsw-radius-md, 6px);
+  border: 1px solid var(--dsw-alias-border-subtle, rgba(127, 127, 127, 0.35));
+  background: var(--dsw-alias-surface-default, transparent);
+  color: inherit;
+}
+
+.dsh-gc-btn {
+  font: inherit;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: var(--dsw-radius-md, 6px);
+  border: 1px solid var(--dsw-alias-border-subtle, rgba(127, 127, 127, 0.35));
+  background: var(--dsw-alias-surface-default, transparent);
+  color: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dsh-gc-btn:hover:not(:disabled) {
+  background: var(--dsw-alias-surface-hover, rgba(127, 127, 127, 0.12));
+}
+
+.dsh-gc-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.dsh-gc-btn-primary {
+  background: var(--dsw-alias-accent-default, #4b9eff);
+  border-color: transparent;
+  color: #fff;
+}
+
+.dsh-gc-btn-small {
+  padding: 1px 8px;
+  font-size: 11px;
+}
+
+/* Not a containing block: the picker anchors to the whole toolbar row so it
+   spans the pane even when the picker button sits mid-row in a narrow column. */
+.dsh-gc-picker-wrap {
+  position: static;
+}
+
+.dsh-gc-picker {
+  position: absolute;
+  top: 100%;
+  left: 10px;
+  right: 10px;
+  z-index: 40;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--dsw-alias-border-subtle, rgba(127, 127, 127, 0.35));
+  border-radius: 0 0 var(--dsw-radius-md, 8px) var(--dsw-radius-md, 8px);
+  background: var(--dsw-alias-surface-raised, #fff);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.dsh-gc-picker-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  font-size: 12px;
+  opacity: 0.85;
+  border-bottom: 1px solid var(--dsw-alias-border-subtle, rgba(127, 127, 127, 0.2));
+}
+
+.dsh-gc-picker-hint,
+.dsh-gc-picker-empty {
+  padding: 6px 10px;
+  font-size: 12px;
+  opacity: 0.65;
+}
+
+.dsh-gc-picker-list {
+  max-height: 320px;
+  overflow: auto;
+}
+
+.dsh-gc-picker-item {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1px;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  font-size: 12px;
+  padding: 6px 10px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.dsh-gc-picker-item:hover {
+  background: var(--dsw-alias-surface-hover, rgba(127, 127, 127, 0.12));
+}
+
+.dsh-gc-picker-item.is-active {
+  background: var(--dsw-alias-surface-selected, rgba(75, 158, 255, 0.15));
+}
+
+.dsh-gc-picker-name {
+  font-weight: 600;
+}
+
+.dsh-gc-picker-path {
+  font-size: 11px;
+  opacity: 0.55;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dsh-gc-file {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  min-width: 0;
+  max-width: min(260px, 100%);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dsh-gc-file-none {
+  opacity: 0.4;
+}
+
+.dsh-gc-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--dsw-alias-border-subtle, rgba(127, 127, 127, 0.4));
+  flex: none;
+}
+
+.dsh-gc-dot.is-dirty {
+  background: var(--dsw-alias-warning-default, #f5a623);
+}
+
+.dsh-gc-dirty-label {
+  opacity: 0.75;
+  font-size: 11px;
+}
+
+.dsh-gc-spacer {
+  flex: 1;
+}
+
+.dsh-gc-hint {
+  font-size: 11px;
+  opacity: 0.55;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dsh-gc-saveas {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-bottom: 1px solid var(--dsw-alias-border-subtle, rgba(127, 127, 127, 0.25));
+  background: var(--dsw-alias-surface-raised, transparent);
+}
+
+.dsh-gc-input {
+  flex: 1;
+  min-width: 120px;
+  font: inherit;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: var(--dsw-radius-md, 6px);
+  border: 1px solid var(--dsw-alias-border-subtle, rgba(127, 127, 127, 0.35));
+  background: var(--dsw-alias-surface-default, transparent);
+  color: inherit;
+}
+
+.dsh-gc-status {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  font-size: 12px;
+  padding: 4px 10px;
+  border: 0;
+  cursor: pointer;
+}
+
+.dsh-gc-status-ok {
+  background: var(--dsw-alias-success-subtle, rgba(52, 211, 153, 0.15));
+  color: inherit;
+}
+
+.dsh-gc-status-error {
+  background: var(--dsw-alias-danger-subtle, rgba(239, 68, 68, 0.16));
+  color: inherit;
+}
+
+.dsh-gc-frame-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.dsh-gc-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.dsh-gc-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.dsh-gc-setup {
+  margin: auto;
+  max-width: 460px;
+  padding: 16px;
+  font-size: 13px;
+  line-height: 1.6;
+  border: 1px solid var(--dsw-alias-border-subtle, rgba(127, 127, 127, 0.35));
+  border-radius: var(--dsw-radius-md, 8px);
+  background: var(--dsw-alias-surface-raised, transparent);
+}
+
+/* "Open in Spreadsheets" button on conversation file cards. */
+.dsh-gc-card-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font: inherit;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: var(--dsw-radius-md, 6px);
+  border: 1px solid var(--dsw-alias-border-subtle, rgba(127, 127, 127, 0.35));
+  background: var(--dsw-alias-surface-default, transparent);
+  color: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dsh-gc-card-open:hover {
+  background: var(--dsw-alias-surface-hover, rgba(127, 127, 127, 0.12));
+}
+
+/* The default-opener switch row on the bundle's Plugins page. */
+.dsh-gc-setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.dsh-gc-setting-text {
+  min-width: 0;
+}
+
+.dsh-gc-setting-title {
+  font-size: 13px;
+  color: var(--dsw-alias-text-primary, inherit);
+}
+
+.dsh-gc-setting-desc {
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.6;
+}

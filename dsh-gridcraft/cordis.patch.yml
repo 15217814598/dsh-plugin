@@ -1,0 +1,7 @@
+# dsh-gridcraft bundle patch
+
+- insert:
+    - id: gridcraft
+      name: 'dsh-gridcraft-plugin'
+      config:
+        enabled: true
